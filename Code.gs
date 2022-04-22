@@ -9,7 +9,7 @@ function myFunction() {
   const QUERY = PropertiesService.getScriptProperties().getProperty("query");
 
   console.log(QUERY);
-  
+
   var myThreads = GmailApp.search(QUERY);
   var myMessages = GmailApp.getMessagesForThreads(myThreads);
   
@@ -18,7 +18,7 @@ function myFunction() {
  
       var strDate　=　myMessages[i][j].getDate();
       var strSubject　=　myMessages[i][j].getSubject();
-      console.log(strSubject);
+      console.log(strDate + ":" + strSubject);
       
       if (checkSubject(strSubject) && checkHours(strDate, START_HOUR, END_HOUR)) {
         console.log(strSubject);
